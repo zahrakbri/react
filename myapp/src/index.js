@@ -47,7 +47,7 @@ class ParentClass extends React.Component {
 
 
 
-ReactDOM.render(<ParentComponent name='amir' />, document.getElementById('root'));
+ReactDOM.render(<App firstname = 'zahra' lastname = 'kabiri' />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
