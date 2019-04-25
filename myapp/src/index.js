@@ -16,18 +16,18 @@ function Welcome(props) {
   console.log('props:::', props)
   return(
     <div>
-      <h1> salam {props.firstname}     {props.lastname}!</h1>
+      <h1> salam {props.name}     {props.lastname}!</h1>
     </div>
   )
 }
 
-function ParentComponent() {
+function ParentComponent(props) {
   return(
     <div>
       <Welcome firstname = 'rezvan' lastname = 'habibi' />
-      <Welcome name = 'ali' firstname = 'rezvan' lastname = 'habibi' />
-      <Welcome name = 'zahra' firstname = 'rezvan' lastname = 'habibi' />
-      <Welcome name = 'rezvan' firstname = 'rezvan' lastname = 'habibi' />
+      <Welcome name = 'ali' firstname = 'amir' lastname = 'habibi' />
+      <Welcome name = 'zahra' firstname = 'zahra' lastname = 'habibi' />
+      <Welcome name = 'rezvan' firstname = 'rezvan' lastname = 'kabiri' />
     </div>
   )
 }
@@ -47,7 +47,7 @@ class ParentClass extends React.Component {
 
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<ParentComponent name='amir' />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
