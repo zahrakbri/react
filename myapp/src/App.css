@@ -33,4 +33,17 @@
   border: 1px solid;
   border-radius: 4px;
 }
+.d1 {
+  border: 1px solid #000;
+  width: 30%;
+  display: inline-block;
+}
 
+.d2 {
+  border: 1px solid #000;
+    width: 69%;
+    display: inline-block;
+}
+.conv {
+  border: 1px solid gray;
+}
