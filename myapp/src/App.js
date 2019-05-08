@@ -1,13 +1,13 @@
-import React from 'react';
-import './App.css';
-import Massenger from './components/Massenger'
+import React from 'react'
+import './App.css'
+import Signup from './components/Signup'
 
 class App extends React.Component {
-  render() {
+  render () {
     return (
-      <Massenger />
-    );
+      <Signup />
+    )
   }
 }
 
-export default App;
+export default App
