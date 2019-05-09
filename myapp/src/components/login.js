@@ -1,4 +1,5 @@
 import React from 'react'
+import validate from '../validation/validateFunction'
 import telegram from '../images/telegram.png'
 
 class Login extends React.Component {
@@ -7,19 +8,33 @@ class Login extends React.Component {
     this.state = {
       email: '',
       password: '',
-      clicked: false
+      clicked: false,
+      error: {
+        email: null,
+        password: null
+      }
     }
   }
 
   handleChange (e) {
-    console.log('value::::', e.target.value)
+    // console.log('value::::', e.target.value)
     var name = e.target.name
-    this.setState({ [name]: e.target.value }, () => console.log('callback', this.state[name]))
-    console.log('state::::', this.state.email)
+    this.setState({ [name]: e.target.value })
+    // console.log('state::::', this.state.email)
   }
 
   handleClick () {
-    this.setState({ clicked: !this.state.clicked })
+    var emailError = validate('email', this.state.email)
+    var passwordError = validate('password', this.state.password)
+
+    // var error = {}
+    // error.email = emailError
+    // error.password = passwordError
+    // this.setState({error})
+    var error = {}
+    this.setState({...this.state, error: {...this.state.error, email:emailError, password: passwordError}})
+
+    //this.setState({ clicked: !this.state.clicked })
     // if (this.state.clicked === true) {
     //   this.setState({ clicked: false })
     // } else {
@@ -41,16 +56,20 @@ class Login extends React.Component {
             placeholder='email'
             onChange={(e) => this.handleChange(e)}
           />
-          { this.state.email.length >= 2 && this.state.email.length < 5 &&
-            <p>{this.state.email}</p>
+          { this.state.error.email !== null &&
+            <p style={{color: 'red'}}>{this.state.error.email}</p>
           }
           
           <input
             className='my-input'
+            type = 'password'
             placeholder='password'
             name='password'
             onChange={(e) => this.handleChange(e)}
           />
+          { this.state.error.password !== null &&
+            <p style={{color: 'red'}}>{this.state.error.password}</p>
+          }
           <button
             className='submit'
             onClick={() => this.handleClick()}

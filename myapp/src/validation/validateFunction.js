@@ -17,7 +17,6 @@ export default function validate (fieldName, value) {
   //                       }
   var formFields = {}
   formFields[fieldName] = validateObject[fieldName]
-
   // The formValues and validated against the formFields
   // the variable result hold the error messages of the field
   const result = validatejs(formValues, formFields)

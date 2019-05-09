@@ -1,11 +1,11 @@
 import React from 'react'
 import './App.css'
-import Massenger from './components/Massenger'
+import Login from './components/login'
 
 class App extends React.Component {
   render () {
     return (
-      <Massenger />
+      <Login />
     )
   }
 }

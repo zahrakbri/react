@@ -50,10 +50,6 @@ export default class ConversationList extends React.Component {
       )
 
       }
-
-
-        
-
       </div>
     )
   }
