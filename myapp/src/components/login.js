@@ -1,6 +1,7 @@
 import React from 'react'
 import validate from '../validation/validateFunction'
 import telegram from '../images/telegram.png'
+import {Link} from 'react-router-dom'
 
 class Login extends React.Component {
   constructor (props) {
@@ -31,7 +32,6 @@ class Login extends React.Component {
     // error.email = emailError
     // error.password = passwordError
     // this.setState({error})
-    var error = {}
     this.setState({...this.state, error: {...this.state.error, email:emailError, password: passwordError}})
 
     //this.setState({ clicked: !this.state.clicked })
@@ -76,6 +76,13 @@ class Login extends React.Component {
           >
             login
           </button>
+
+          <Link
+            className='submit'
+            to='./signup'
+          >
+            sign up
+          </Link>
           {/* { this.state.clicked === true &&
             <p>wesrdtfyguhjk</p>
           } */}
