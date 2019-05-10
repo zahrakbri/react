@@ -5,7 +5,7 @@ import Chat from './Chat'
 export default class Massenger extends React.Component {
   render () {
     return (
-      <div>
+      <div class='messengerscreen'>
         <ConversationList />
 
         <Chat />
