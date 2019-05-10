@@ -8,6 +8,11 @@
   background-color: rgb(227, 227, 241)
 }
 
+.link {
+  text-decoration: none;
+  text-align: center;
+}
+
 .container {
   width: 40%;
   display: flex;
@@ -50,5 +55,30 @@
     display: inline-block;
 }
 .conv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   border: 1px solid gray;
+}
+
+.profileContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-grow: 4;
+}
+
+.inf {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 120px;
 }

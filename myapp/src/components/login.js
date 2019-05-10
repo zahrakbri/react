@@ -76,9 +76,10 @@ class Login extends React.Component {
           >
             login
           </button>
+          
 
           <Link
-            className='submit'
+            className='submit link'
             to='./signup'
           >
             sign up
@@ -86,8 +87,8 @@ class Login extends React.Component {
           {/* { this.state.clicked === true &&
             <p>wesrdtfyguhjk</p>
           } */}
-          { this.state.clicked === true ? <p>1111111</p> : <p>222222222222</p>
-          }
+          {/* { this.state.clicked === true ? <p>1111111</p> : <p>222222222222</p>
+          } */}
         </div>
       </div>
     )
