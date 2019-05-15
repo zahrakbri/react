@@ -2,9 +2,22 @@ import React from 'react'
 import profile from '../images/profile.png'
 import send from '../images/send.png'
 import ChatScreen from './ChatScreen'
+import Footer from './Footer'
 
 export default class Chat extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      newMessage : '',
+    }
+  }
+
+  getNewMessage(newMessage) {
+    console.log('Im here:', newMessage)
+    this.setState({newMessage})
+  }
   render () {
+    console.log('state', this.state.newMessage)
     return (
       <div className='d2'>
         <div className='header'>
@@ -12,12 +25,9 @@ export default class Chat extends React.Component {
           <span> zahra </span>
         </div>
 
-        <ChatScreen />
+        <ChatScreen newMessage = {this.state.newMessage} />
 
-        <div className='footer'>
-          <input placeholder='write a message...' />
-          <img src={send} style={{width: '20px'}} />
-        </div>
+        <Footer getNewMessage={(newMessage) => this.getNewMessage(newMessage)} />
       </div>
     )
   }
