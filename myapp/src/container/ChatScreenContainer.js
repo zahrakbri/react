@@ -9,7 +9,8 @@ const mapDispatchToProps = dispatch => ({
 const mapStateToProps = state =>{
   console.log(state)
   return {
-    newMessage: state.newMessage
+    newMessage: state.newMessage,
+    messages: state.messages
   }
 }
 

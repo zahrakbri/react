@@ -4,26 +4,13 @@ export default class ChatScreen extends React.Component {
   constructor() {
     super()
     this.state = {
-      messages : [
-        {
-          id: 1,
-          message: 'salam'
-        },
-        {
-          id: 2,
-          message: 'salam'
-        },
-        {
-          id: 1,
-          message: 'khoobi?'
-        }
-      ]
     }
   }
   render() {
+    console.log('111111',this.props.messages)
     return(
       <div className='screen'>
-        {this.state.messages.map( (item, index) => {
+        {this.props.messages.map( (item, index) => {
           if(item.id === 1) {
             return(
               <div className='sender'>
@@ -47,9 +34,9 @@ export default class ChatScreen extends React.Component {
           <span className = 'message'>salammm</span>
         </div> */}
 
-        <div className='sender'>
+        {/* <div className='sender'>
           <span className = 'message'>{this.props.newMessage}</span>
-        </div> 
+        </div>  */}
       </div>
     )
   }
