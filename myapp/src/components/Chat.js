@@ -1,7 +1,7 @@
 import React from 'react'
 import profile from '../images/profile.png'
 import send from '../images/send.png'
-import ChatScreen from './ChatScreen'
+import ChatScreenContainer from '../container/ChatScreenContainer'
 import Footer from './Footer'
 
 export default class Chat extends React.Component {
@@ -25,7 +25,7 @@ export default class Chat extends React.Component {
           <span> zahra </span>
         </div>
 
-        <ChatScreen newMessage = {this.state.newMessage} />
+        <ChatScreenContainer newMessage = {this.state.newMessage} />
 
         <Footer getNewMessage={(newMessage) => this.getNewMessage(newMessage)} />
       </div>

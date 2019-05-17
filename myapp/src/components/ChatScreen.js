@@ -45,11 +45,11 @@ export default class ChatScreen extends React.Component {
         }
         {/* <div className='receiver'>
           <span className = 'message'>salammm</span>
-        </div>
+        </div> */}
 
         <div className='sender'>
-          <span className = 'message'>salammm!!!!</span>
-        </div> */}
+          <span className = 'message'>{this.props.newMessage}</span>
+        </div> 
       </div>
     )
   }

@@ -14,6 +14,7 @@ export default class Chat extends React.Component {
     this.props.getNewMessage(e.target.value)
   }
   render () {
+    console.log('props', this.props)
     return (
         <div className='footer'>
           <input
