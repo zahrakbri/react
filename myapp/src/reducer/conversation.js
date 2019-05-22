@@ -1,7 +1,8 @@
 import { stat } from "fs";
 
 const INIT = {
-  newMessage: ''
+  newMessage: '',
+  messages: []
 }
 
 function conversation(state = INIT, action) {
@@ -9,6 +10,7 @@ function conversation(state = INIT, action) {
     case 'SAVE_NEW_MESSAGE':
       return {...state,
         newMessage: action.payload,
+        messages: [...state.messages, {id: 1, message: action.payload}]
       }
     
     default:

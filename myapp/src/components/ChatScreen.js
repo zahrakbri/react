@@ -8,9 +8,10 @@ export default class ChatScreen extends React.Component {
     }
   }
   render() {
+    console.log('chat props::', this.props)
     return(
       <div className='screen'>
-        {/* {this.state.messages.map( (item, index) => {
+        {this.props.messages.map( (item, index) => {
           if(item.id === 1) {
             return(
               <div className='sender'>
@@ -29,14 +30,14 @@ export default class ChatScreen extends React.Component {
 
         )
 
-        } */}
+        }
         {/* <div className='receiver'>
           <span className = 'message'>salammm</span>
         </div> */}
 
-        <div className='sender'>
+        {/* <div className='sender'>
           <span className = 'message'>{this.props.newMessage}</span>
-        </div> 
+        </div>  */}
       </div>
     )
   }

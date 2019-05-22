@@ -17,6 +17,7 @@ export default class Chat extends React.Component {
 
   sendNewMessage() {
     this.props.dispatch(addNewMessage(this.state.newMessage))
+    this.setState({newMessage: ''})
   }
   render () {
     console.log('props', this.props)
