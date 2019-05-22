@@ -1,6 +1,6 @@
 
 const INIT = {
-  newMessage: 'sfrgtgt'
+  newMessage: ''
 }
 
 function conversation(state = INIT, action) {
