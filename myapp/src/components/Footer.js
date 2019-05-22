@@ -29,7 +29,7 @@ export default class Chat extends React.Component {
           <img
             src={send}
             onClick={() => this.sendNewMessage()}
-            style={{width: '20px'}} />
+            style={{width: '20px', cursor: 'pointer'}} />
         </div>
     )
   }
