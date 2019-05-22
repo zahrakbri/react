@@ -4,7 +4,7 @@ export default class ChatScreen extends React.Component {
   constructor() {
     super()
     this.state = {
-      messages = []
+      messages : []
     }
   }
   render() {
