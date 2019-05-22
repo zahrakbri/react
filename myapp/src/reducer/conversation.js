@@ -1,8 +1,8 @@
-import { stat } from "fs";
 
 const INIT = {
   newMessage: '',
-  messages: []
+  messages: [],
+  conversationList : []
 }
 
 function conversation(state = INIT, action) {
@@ -13,6 +13,11 @@ function conversation(state = INIT, action) {
         messages: [...state.messages, {id: 1, message: action.payload}]
       }
     
+    case 'SAVE_CONVERSATION_LIST':
+    return {
+      ...state,
+      conversationList: action.payload
+    }
     default:
       return state
   }

@@ -39,15 +39,17 @@ class Login extends React.Component {
       email: this.state.email,
       password: this.state.password
     }
-    let rowdata = new FormData()
-    rowdata.append('email', this.state.email)
-    rowdata.append('password', this.state.password)
+    // let rowdata = new FormData()
+    // rowdata.append('email', this.state.email)
+    // rowdata.append('password', this.state.password)
     var headers = {
       'Content-Type': 'application/json',
     }
-    axios.post('https://api.paywith.click/auth/signin/', data, {headers: headers})
+    axios.post('https://api.paywith.click/auth/signin/', data)
     .then(function (response) {
       console.log('response::::',response);
+      window.localStorage.setItem('token', response.data.data.token)
+      window.localStorage.setItem('id', response.data.data.profile.id)
     })
     .catch(function (error) {
       console.log('error::::',error);

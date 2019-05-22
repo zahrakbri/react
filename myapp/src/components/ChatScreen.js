@@ -8,7 +8,6 @@ export default class ChatScreen extends React.Component {
     }
   }
   render() {
-    console.log('chat props::', this.props)
     return(
       <div className='screen'>
         {this.props.messages.map( (item, index) => {
