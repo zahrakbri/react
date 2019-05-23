@@ -68,7 +68,7 @@ export default class ConversationList extends React.Component {
             />
           { this.state.suggestedUsers.map((user, index) => {
             return(
-              <p className='suggest'>{user.email}</p>
+              <p className='suggest'><img src={user.avatar_url} className='suggestedAvatar'/> {user.email}</p>
             )
           })
 
