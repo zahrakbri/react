@@ -38,20 +38,22 @@ export default class ConversationList extends React.Component {
     return (
       <div className='d1'>
       { this.props.conversationList.map( (conversation, index) => {
-        conversation.users.map((user, idx) => {
-          if(user.id != this.state.myId) {
-            return (
-              <Conversation
-              key = {index}
-              name={user.name}
-              date={conversation.latest_message_date}
-              latestMessage={conversation.latest_message}
-            />
-            )
-          }
-        })
-      }
-      )
+        return(
+          conversation.users.map((user, idx) => {
+            if(user.id != this.state.myId) {
+              return (
+                <Conversation
+                key = {index}
+                name={user.name}
+                date={conversation.latest_message_date}
+                latestMessage={conversation.latest_message}
+                avatar = {user.avatar_url}
+              />
+              )
+            }
+          })
+        )
+      })
 
       }
       </div>

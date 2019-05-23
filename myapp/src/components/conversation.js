@@ -6,15 +6,15 @@ export default class Conversation extends React.Component {
     return (
       <div className='conv'>
         <div className='profileContainer' >
-          <img src={profile} style={{ width: '30px' }} />
+          <img src={this.props.avatar} style={{ width: '30px' }} />
         </div>
         <div className='contentContainer'>
           <div className='inf'>
-            <span>zahra</span>
-            <span>2/3</span>
+            <span>{this.props.name}</span>
+            <span>{this.props.date.slice(0,10)}</span>
           </div>
           <div className='inf'>
-            <span>salamdfg!</span>
+            <span>{this.props.latestMessage}</span>
             <span>3</span>
           </div>
         </div>
