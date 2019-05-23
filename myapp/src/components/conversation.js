@@ -11,7 +11,7 @@ export default class Conversation extends React.Component {
         <div className='contentContainer'>
           <div className='inf'>
             <span>{this.props.name}</span>
-            <span>{this.props.date.slice(0,10)}</span>
+            <span style={{fontSize: '10px', color: '#999'}}>{this.props.date.slice(0,10)}</span>
           </div>
           <div className='inf'>
             <span>{this.props.latestMessage}</span>

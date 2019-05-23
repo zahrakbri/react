@@ -9,7 +9,9 @@ export default class ConversationList extends React.Component {
     super(props)
     this.state = {
       conversationList : [],
-      myId: window.localStorage.getItem('id')
+      myId: window.localStorage.getItem('id'),
+      token: window.localStorage.getItem('token'),
+      suggestedUsers: []
     }
     this.handleRequest = this.handleRequest.bind(this)
   }
@@ -33,10 +35,45 @@ export default class ConversationList extends React.Component {
     })
   }
 
+  handleChange(e) {
+    // let data = {
+    //   token: this.state.token,
+    //   query: e.target.value,
+    //   size: 4,
+    // }
+    let fdata = new FormData()
+    fdata.append('token',  this.state.token)
+    fdata.append('query', e.target.value)
+    fdata.append('size', 4)
+    console.log('fdatta', fdata)
+    axios.post('https://api.paywith.click/explore/search/contacts/', fdata)
+      .then((response) => {
+        console.log('response::::',response);
+        this.setState({ suggestedUsers: response.data.data.users})
+      })
+      .catch((error) => {
+        console.log('error::::',error);
+      });
+  }
+
   render () {
     console.log('props:::::', this.state.myId)
     return (
       <div className='d1'>
+        <div>
+          <input
+            className='search'
+            placeholder = 'type a name...'
+            onChange = {(e) => this.handleChange(e)}
+            />
+          { this.state.suggestedUsers.map((user, index) => {
+            return(
+              <p className='suggest'>{user.email}</p>
+            )
+          })
+
+          }
+        </div>
       { this.props.conversationList.map( (conversation, index) => {
         return(
           conversation.users.map((user, idx) => {
