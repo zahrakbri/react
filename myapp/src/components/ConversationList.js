@@ -80,6 +80,7 @@ export default class ConversationList extends React.Component {
             if(user.id != this.state.myId) {
               return (
                 <Conversation
+                id = {conversation.id}
                 key = {index}
                 name={user.name}
                 date={conversation.latest_message_date}
